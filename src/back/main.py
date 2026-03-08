@@ -20,7 +20,6 @@ def login(user: User):
     return {"message": f"User {user.email} is logged in!"}
 
 
-
 # =============
 # PROFILE MODEL
 # =============

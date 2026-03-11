@@ -1,26 +1,36 @@
-from flask import Flask, request
+from flask import Flask, jsonify
+from flask_cors import CORS
 
-app = Flask(__name__)
+from .models.database import init_db
+from .routes.auth import auth_bp
+from .routes.users import users_bp
+from .routes.matches import matches_bp
+from .routes.messages import messages_bp
 
-@app.route("/")
-def home():
-    return "AztecMatch backend is running"
 
-@app.route("/register", methods=["POST"]) # this is the post request like how we access the email to see if its valid or not.
-def post():
-    data = request.get_json() 
-    email = data["email"] #set the email to the data of the email
-    
-    if not email.endswith("@sdsu.edu"):
-        return "Only SDSU emails allowed"
-    else:
-        return "Email verified!"
+def create_app() -> Flask:
+    app = Flask(__name__)
 
-print("app.py started")
+    # Enable CORS for all routes (frontend can be opened from file:// or another port)
+    CORS(app)
+
+    # Initialize database
+    init_db()
+
+    # Register blueprints
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(users_bp)
+    app.register_blueprint(matches_bp)
+    app.register_blueprint(messages_bp)
+
+    @app.get("/api/health")
+    def health():
+        return jsonify({"status": "ok"})
+
+    return app
+
 
 if __name__ == "__main__":
-    print("starting flask server...")
-    app.run(debug=True , port = 5001)
-
-
+    app = create_app()
+    app.run(host="0.0.0.0", port=8080, debug=True)
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AztecMatch – Register</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="navbar">
+        <div class="navbar-title">
+          AZTECMATCH
+          <span class="navbar-heart">♥</span>
+        </div>
+        <nav class="navbar-links">
+          <a href="index.html">Login</a>
+          <a href="register.html" class="active">Register</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="page-heading">
+          <h1>Create your AztecMatch profile.</h1>
+          <p>Use your SDSU email so we can keep the community student-only and safe.</p>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div class="card-title">Register</div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>SDSU students only</span>
+            </div>
+          </div>
+
+          <form id="register-form" class="form">
+            <div class="form-row-inline">
+              <div class="form-row">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" placeholder="Aztec" required />
+              </div>
+              <div class="form-row">
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" placeholder="Student" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="reg-email">SDSU Email</label>
+              <input
+                type="email"
+                id="reg-email"
+                placeholder="you@sdsu.edu"
+                autocomplete="email"
+                required
+              />
+              <p class="helper-text">Only addresses ending in <strong>@sdsu.edu</strong> are allowed.</p>
+            </div>
+
+            <div class="form-row">
+              <label for="reg-password">Password</label>
+              <input
+                type="password"
+                id="reg-password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+
+            <div id="register-error" class="error-text" style="display: none"></div>
+            <div id="register-success" class="success-text" style="display: none"></div>
+
+            <button type="submit" class="btn" id="register-submit">Create account</button>
+
+            <p class="helper-text">
+              Already have an account?
+              <a href="index.html">Return to login</a>
+            </p>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+  </html>
+

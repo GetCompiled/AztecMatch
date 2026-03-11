@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AztecMatch – Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="navbar">
+        <div class="navbar-title">
+          AZTECMATCH
+          <span class="navbar-heart">♥</span>
+        </div>
+        <nav class="navbar-links">
+          <a href="dashboard.html" class="active">Dashboard</a>
+          <button id="logout-btn" class="logout">Logout</button>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="page-heading">
+          <h1 id="dashboard-title">Welcome to AztecMatch.</h1>
+          <p>Your matches and messages will appear here as the app grows.</p>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div class="card-title">You’re logged in 🎉</div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>Prototype dashboard</span>
+            </div>
+          </div>
+          <p class="helper-text">
+            Use this page to test registration, login, and logout. When you click
+            <strong>Logout</strong> in the top-right corner, your session will be cleared and you’ll
+            be sent back to the login page.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+  </html>
+

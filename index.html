@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AztecMatch – Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="navbar">
+        <div class="navbar-title">
+          AZTECMATCH
+          <span class="navbar-heart">♥</span>
+        </div>
+        <nav class="navbar-links">
+          <a href="index.html" class="active">Login</a>
+          <a href="register.html">Register</a>
+        </nav>
+      </header>
+
+      <main class="page">
+        <section class="page-heading">
+          <h1>Meet your campus match.</h1>
+          <p>
+            A private space for SDSU students to connect, study together, and build real
+            relationships on campus.
+          </p>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div class="card-title">Login</div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>SDSU students only</span>
+            </div>
+          </div>
+
+          <form id="login-form" class="form">
+            <div class="form-row">
+              <label for="login-email">SDSU Email</label>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="you@sdsu.edu"
+                autocomplete="email"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                placeholder="••••••••"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+
+            <div id="login-error" class="error-text" style="display: none"></div>
+
+            <button type="submit" class="btn" id="login-submit">Login</button>
+
+            <p class="helper-text">
+              New here?
+              <a href="register.html">Create your AztecMatch profile</a>
+              and start connecting ♥
+            </p>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+  </body>
+  </html>
+

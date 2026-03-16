@@ -57,3 +57,5 @@ def update_profile():
     finally:
         db.close()
 
+
+# profile update improvements by Victor
